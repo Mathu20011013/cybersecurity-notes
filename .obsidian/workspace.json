@@ -6,7 +6,6 @@
       {
         "id": "3d346a510ce22e76",
         "type": "tabs",
-        "dimension": 59.23076923076924,
         "children": [
           {
             "id": "74fbc403ee83b52f",
@@ -14,32 +13,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "GRC/THM room - Governance & Regulation.md",
+                "file": "computer crime adn digital forensic/Introduction.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "THM room - Governance & Regulation"
+              "title": "Introduction"
             }
-          }
-        ]
-      },
-      {
-        "id": "3b85f60a6d065b56",
-        "type": "tabs",
-        "dimension": 40.76923076923077,
-        "children": [
+          },
           {
-            "id": "ee32c9b127d859cb",
+            "id": "9cc9a0e8114aa1bb",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "computer crime adn digital forensic/Learning Outcome 6 - Evaluate Network Traffic & Construct Timelines.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Learning Outcome 6 - Evaluate Network Traffic & Construct Timelines"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -200,13 +197,18 @@
       "githobs:Manage a github issue": false
     }
   },
-  "active": "ee32c9b127d859cb",
+  "active": "9cc9a0e8114aa1bb",
   "lastOpenFiles": [
+    "TryHackMe/Cybersecurity 101/Wireshark - The Basics.md",
+    "computer crime adn digital forensic/Learning Outcome 6 - Evaluate Network Traffic & Construct Timelines.md",
+    "computer crime adn digital forensic/Learning Outcome 3 - Analyse Computer Systems to Locate Digital Evidence.md",
+    "computer crime adn digital forensic/Introduction.md",
+    "Untitled.md",
     "GRC/THM room - Governance & Regulation.md",
+    "computer crime adn digital forensic",
     "Untitled.canvas",
     "TryHackMe/Cybersecurity 101",
     "Welcome.md",
-    "Untitled.md",
     "Linux",
     "GRC",
     "TryHackMe"
