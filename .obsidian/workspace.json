@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "3d346a510ce22e76",
+        "id": "5eeb1f4e269108fc",
         "type": "tabs",
         "children": [
           {
-            "id": "74fbc403ee83b52f",
+            "id": "5efb0db7e5648d8c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "computer crime adn digital forensic/Learning Outcome 4 - Demonstrate Evidence Preservation & Authentication.md",
+                "file": "TryHackMe/Cybersecurity 101/Linux.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Learning Outcome 4 - Demonstrate Evidence Preservation & Authentication"
+              "title": "Linux"
             }
           }
         ]
@@ -41,7 +41,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -171,7 +173,6 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "obsidian-git:Open Git source control": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -179,21 +180,29 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "bases:Create new base": false,
-      "githobs:Manage a github issue": false
+      "githobs:Manage a github issue": false,
+      "obsidian-git:Open Git source control": false
     }
   },
-  "active": "74fbc403ee83b52f",
+  "active": "5efb0db7e5648d8c",
   "lastOpenFiles": [
-    "computer crime adn digital forensic/Learning Outcome 2 - Explain Digital Forensics Investigation Processes.md",
+    "TryHackMe/Cybersecurity 101/windows.md",
+    "TryHackMe/Cybersecurity 101/Linux.md",
+    "file:C:/Users/LOQ/Desktop/Mathu/New folder/cybersecurity-notes/TryHackMe/Cybersecurity 101/windows.md",
+    "Untitled.canvas",
+    "TryHackMe/Cybersecurity 101/Search skills.md",
+    "AWS/Module -1.md",
+    "AWS",
+    "TryHackMe/Cybersecurity 101/Wireshark - The Basics.md",
+    "file:C:/Users/LOQ/Desktop/Mathu/New folder/cybersecurity-notes/TryHackMe/Cybersecurity 101/Wireshark - The Basics.md",
+    "GRC/THM room - Governance & Regulation.md",
+    "Untitled.md",
     "computer crime adn digital forensic/Learning Outcome 4 - Demonstrate Evidence Preservation & Authentication.md",
+    "computer crime adn digital forensic/Learning Outcome 2 - Explain Digital Forensics Investigation Processes.md",
     "computer crime adn digital forensic/Introduction.md",
     "computer crime adn digital forensic/Learning Outcome 6 - Evaluate Network Traffic & Construct Timelines.md",
-    "TryHackMe/Cybersecurity 101/Wireshark - The Basics.md",
     "computer crime adn digital forensic/Learning Outcome 3 - Analyse Computer Systems to Locate Digital Evidence.md",
-    "Untitled.md",
-    "GRC/THM room - Governance & Regulation.md",
     "computer crime adn digital forensic",
-    "Untitled.canvas",
     "TryHackMe/Cybersecurity 101",
     "Welcome.md",
     "Linux",

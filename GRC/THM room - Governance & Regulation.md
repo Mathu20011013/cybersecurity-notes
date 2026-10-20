@@ -170,7 +170,7 @@ _Example:_ If there is a risk of unauthorized access → implement access contro
     - Multi-factor authentication (MFA)
     - Secure credential management
 
-# Program Management (NIST 800-53) – Short Note
+# Program Management (NIST 800-53) 
 
 - Establish **organization-wide security program**
 - Define **roles and responsibilities**
