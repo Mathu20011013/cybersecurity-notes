@@ -456,3 +456,236 @@ From here, you can:
 |**Full Control**|Complete access.|
 |**Windows Service**|Background program that performs system tasks.|
 |**services.msc**|Opens the Windows Services management console.|
+# **Windows Fundamentals 2 — Short Notes**
+
+## **1. System Configuration — `msconfig`**
+
+Used to **troubleshoot Windows startup problems**. Requires administrator permissions.
+
+Open: **Win + R → `msconfig`**
+
+|Tab|Purpose|
+|---|---|
+|**General**|Choose what Windows loads during startup.|
+|**Boot**|Configure boot options, such as Safe boot.|
+|**Services**|View services and enable/disable them for troubleshooting.|
+|**Startup**|Directs you to Task Manager to manage startup apps on Windows client systems.|
+|**Tools**|Launch other Windows administration tools.|
+
+**General tab startup modes:**
+
+- **Normal:** Loads the usual drivers and services.
+- **Diagnostic:** Loads only basic devices and services to help identify problems.
+- **Selective:** Lets you choose which startup items and services load.
+
+**Startup applications:**
+
+- Applications configured to start automatically when a user signs in.
+- On Windows 10/11, manage them through **Task Manager → Startup / Startup apps**.
+- In the lesson’s Windows Server VM, check **Win + R → `shell:startup`**.
+- This opens the current user’s Startup folder. It shows items in that folder, **not every possible automatic startup item**.
+
+**Tools tab:** Select a tool → view its **Selected command** → click **Launch**.
+
+## **2. Advanced System Settings**
+
+Search **View advanced system settings** to open System Properties.
+
+**Page file / virtual memory**
+
+- A **page file** uses disk space to support memory management.
+- Windows can move some memory contents from RAM to the page file.
+- It helps support applications when memory demand is high, but **disk is slower than RAM**.
+
+**Path:** Advanced → Performance **Settings** → Advanced → Virtual memory **Change**.
+
+Shows the drive, initial size, maximum size and whether Windows manages the size automatically.
+
+**Startup and Recovery**
+
+- Windows can save a **crash dump** after a serious system crash, such as a Blue Screen of Death.
+- A crash dump contains information used to investigate the cause.
+
+**Path:** Advanced → Startup and Recovery **Settings** → Write debugging information.
+
+|Dump type|Simple meaning|
+|---|---|
+|**Small memory dump**|Basic crash information; smallest file.|
+|**Kernel memory dump**|Memory information related to the Windows kernel.|
+|**Complete memory dump**|Captures physical memory contents; largest option.|
+|**Automatic memory dump**|Similar to a kernel dump, with automatic page-file management.|
+|**None**|No crash dump saved.|
+
+## **3. User Account Control — UAC**
+
+UAC asks for permission when an action needs **administrator privileges**, such as installing software or changing protected settings.
+
+- An administrator normally receives a **Yes/No** prompt.
+- A standard user normally needs **administrator credentials**.
+
+|Level|Behaviour|
+|---|---|
+|**Always notify**|Prompts for apps and your own Windows setting changes that require elevation; dims the desktop.|
+|**Notify for apps — default**|Prompts when apps try to make changes; usually does not prompt for your own Windows setting changes; dims the desktop.|
+|**Notify without dimming**|Same notification behaviour as above, but without the protected, dimmed desktop.|
+|**Never notify**|Suppresses UAC prompts for administrators; reduces protection.|
+
+**Dimming the desktop** indicates the prompt is on the **Secure Desktop**, helping protect it from interference by other applications.
+
+## **4. Computer Management — `compmgmt.msc`**
+
+Combines administration tools into three sections:
+
+- **System Tools**
+- **Storage**
+- **Services and Applications**
+
+**System Tools**
+
+|Tool|Purpose / example|
+|---|---|
+|**Task Scheduler**|Automatically runs programs or scripts at a specified time or trigger. Example: daily backup at 10 AM.|
+|**Event Viewer**|Shows recorded events to troubleshoot problems and investigate activity.|
+|**Shared Folders**|Shows network shares, connected users and remotely opened files.|
+|**Local Users and Groups**|Manages local accounts and group membership.|
+|**Performance Monitor**|Tracks performance counters, such as CPU usage, live or from logs.|
+|**Device Manager**|Views hardware and manages devices and drivers.|
+
+**Task Scheduler**
+
+- **Trigger:** When the task runs, such as at sign-in or every day.
+- **Action:** What it runs, such as a program or script.
+- Tasks can run **once** or **repeatedly**.
+- **Task Scheduler Library:** Browse tasks; check subfolders too.
+- **Create Basic Task:** Create a simple scheduled task.
+
+**Event Viewer**
+
+Three panes: **Left = select logs; Middle = view events; Right = actions.**
+
+The lesson uses these five traditional event categories: [Microsoft Learn](https://learn.microsoft.com/en-us/windows/win32/eventlog/event-types?utm_source=chatgpt.com)
+
+|Event category|Meaning|
+|---|---|
+|**Error**|A significant problem, such as a service failing to start.|
+|**Warning**|A possible problem, such as low disk space.|
+|**Information**|General information about normal operation.|
+|**Success Audit**|An audited security action succeeded, such as a successful login.|
+|**Failure Audit**|An audited security action failed, such as a failed login.|
+
+Main logs: **Application** records application events, **Security** records audited security activity, and **System** records Windows component events. Applications can also create custom logs. [Microsoft Learn](https://learn.microsoft.com/en-us/windows/win32/eventlog/eventlog-key?utm_source=chatgpt.com)
+
+**Shared Folders**
+
+- **Shares:** Folders available over the network.
+- **Sessions:** Users currently connected to shares.
+- **Open Files:** Files currently opened through those connections.
+- **`C$`:** Administrative share for the C: drive.
+- **`ADMIN$`:** Administrative share for the Windows directory.
+- **Permissions:** Determine who can access a share and what they can do.
+
+**Storage → Disk Management**
+
+Used to:
+
+- Set up new disks and create volumes.
+- Extend or shrink volumes.
+- Assign or change drive letters, such as `E:`.
+
+**Services and Applications**
+
+A **service** is a program that runs in the background, such as Windows Update.
+
+Service properties show its **display name, service name, executable path and startup type**.
+
+|Startup type|Meaning|
+|---|---|
+|**Automatic**|Starts automatically during system startup.|
+|**Manual**|Starts when requested by a user, application or system trigger.|
+|**Disabled**|Cannot start until its startup type is changed.|
+
+**Status** tells you whether a service is running now. **Startup type** tells you how it is configured to start.
+
+**WMI — Windows Management Instrumentation**
+
+- Allows tools and scripts to query and manage Windows locally or remotely.
+- Example: PowerShell queries information about installed hardware.
+- **WMIC** is the older, deprecated command-line tool; **WMI itself is not deprecated**.
+
+## **5. System Information — `msinfo32.exe`**
+
+Displays detailed information about the computer’s **hardware and software**.
+
+|Section|Information shown|
+|---|---|
+|**System Summary**|OS version, system name, processor, BIOS and RAM.|
+|**Hardware Resources**|Low-level hardware resource assignments, such as IRQs and memory addresses.|
+|**Components**|Device details, such as display, input and network adapters.|
+|**Software Environment**|Drivers, services, environment variables and other software details.|
+
+Use the search bar to find details such as **IP address**.
+
+**Environment variables**
+
+Named values that tell Windows and programs where important resources are located.
+
+|Variable|Purpose / typical value|
+|---|---|
+|**`WINDIR`**|Windows installation folder, usually `C:\Windows`.|
+|**`TEMP`**|Folder used to store temporary files.|
+|**`PATH`**|Folders searched when you run a command without its full path.|
+|**`ComSpec`**|Command interpreter path, usually `C:\Windows\System32\cmd.exe`.|
+
+**Example:** A program reads `TEMP` to know where to save temporary files without hard-coding a folder location.
+
+View/edit: **Advanced system settings → Environment Variables**.
+
+**Lab answers:**
+
+- System Information executable: **`msinfo32.exe`**
+- System Name: Read it from **System Summary** in your VM.
+- ComSpec: Check the VM’s actual value under **Software Environment → Environment Variables**.
+
+## **6. Resource Monitor — `resmon`**
+
+Shows how running processes use resources.
+
+|Resource|What to check|
+|---|---|
+|**CPU**|Which processes use processing power.|
+|**Memory**|Which processes use RAM.|
+|**Disk**|Which processes read/write data.|
+|**Network**|Which processes send/receive data.|
+
+Useful for investigating slow computers, unresponsive applications and file-locking problems.
+
+**Example:** If the computer is slow, check which process is using a large amount of CPU or disk activity.
+
+## **7. Windows Registry — `regedit`**
+
+A central, hierarchical database that stores Windows configuration, including:
+
+- User profiles and preferences.
+- Application settings.
+- Hardware and driver settings.
+- File associations, such as which app opens a file type.
+
+**Keys** are like folders; **values** hold the settings.
+
+Open Registry Editor: **Win + R → `regedit`**.
+
+**Be careful:** Incorrect registry changes can break applications or Windows. Back up relevant keys before editing.
+
+**Commands to remember**
+
+|Command|Opens|
+|---|---|
+|`msconfig`|System Configuration|
+|`taskmgr`|Task Manager|
+|`compmgmt.msc`|Computer Management|
+|`lusrmgr.msc`|Local Users and Groups|
+|`perfmon`|Performance Monitor|
+|`msinfo32.exe`|System Information|
+|`resmon`|Resource Monitor|
+|`regedit`|Registry Editor|
+|`shell:startup`|Current user’s Startup folder, through Run|
